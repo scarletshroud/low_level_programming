@@ -1,13 +1,13 @@
-%ifndef current_label
-%define current_label 0
+%ifndef current_node
+    %define current_node 0
 %endif 
 
 %macro colon 2
-    %if %0 = 3
+    %if %0 = 2
         %ifid %2
              %2:
-                dq current_label
-                %define current_label %2        
+                dq current_node 
+                %define current_node %2        
         %else 
             %error "the label must be an identifier" 
         %endif 
